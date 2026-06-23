@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product list with cart</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <h1>My Food Blog</h1>
+  <main class="page">
+    <section>
+      <header class="panel-header">
+        <h1>Desserts</h1>
+        <p>Choose your favourite dessert and add it to your cart. You can review your order before confirming.</p>
+      </header>
+      <div class="product-grid" aria-live="polite"></div>
+    </section>
+
+    <aside class="cart-panel">
+      <section class="cart-card" aria-label="Shopping cart">
+        <h2>Your Cart (<span data-cart-count>0</span>)</h2>
+        <div class="cart-content"></div>
+        <button type="button" class="button button--primary" data-confirm-order disabled>Confirm Order</button>
+      </section>
+    </aside>
+  </main>
+
+  <div class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="order-confirm-title">
+    <div class="modal-card">
+      <img src="./assets/images/icon-order-confirmed.svg" alt="Order confirmed">
+      <h3 id="order-confirm-title">Order confirmed</h3>
+      <p>Thank you! Your order is on its way. Start a new order if you'd like to add more items.</p>
+      <button type="button" class="button button--primary" data-close-modal>Start New Order</button>
+    </div>
+  </div>
+
+  <script src="./script.js"></script>
 </body>
 </html>
